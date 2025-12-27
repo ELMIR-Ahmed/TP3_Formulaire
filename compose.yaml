@@ -23,6 +23,9 @@ services:
         build:
             context: ./infra/
             dockerfile: ./php/Dockerfile
+        dns:
+            - 8.8.8.8
+            - 8.8.4.4
         volumes:
             - .:/var/www/html:cached
             - ./infra/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
